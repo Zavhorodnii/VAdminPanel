@@ -682,9 +682,9 @@ option:hover {
       background-color: #1de8b5;
       color: #000000; }
 
-.switch_section .switch_off .custom_switch .switch_closed {
+.switch_section .switch_off .switch_closed {
   animation: turn_off_animate .4s ease-out;
-  left: 1px; }
+  left: 1px !important; }
 
 @keyframes turn_off_animate {
   0% {
@@ -692,7 +692,7 @@ option:hover {
   100% {
     left: 1px; } }
 
-.switch_section .switch_off .custom_switch .switch_style {
+.switch_section .switch_off .switch_style {
   border: 1px solid #000000 !important; }
 
 .switch_section .custom_switch {

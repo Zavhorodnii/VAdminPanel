@@ -1024,10 +1024,10 @@ option{
 .switch_section{
   //$switch_off_color $switch_text_color
   .switch_off {
-    & .custom_switch {
-      .switch_closed {
+    //& .custom_switch {
+      & .switch_closed {
         animation: turn_off_animate .4s ease-out;
-        left: 1px;
+        left: 1px !important;
       }
 
       @keyframes turn_off_animate {
@@ -1042,7 +1042,7 @@ option{
       & .switch_style {
         border: 1px solid $switch_off_color !important;
       }
-    }
+    //}
   }
 
   .custom_switch{

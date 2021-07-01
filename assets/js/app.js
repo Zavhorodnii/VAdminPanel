@@ -98,13 +98,13 @@ $(document).ready(function () {
         $(this).closest('.custom_checkbox').toggleClass('checked')
     }
     $('.switch_closed').click(function (event) {
-        $(this).closest('.control_switch').toggleClass('switch_off');
-        if($(this).closest('.control_switch').hasClass('switch_off')){
+        $(this).closest('.custom_switch').toggleClass('switch_off');
+        if($(this).closest('.custom_switch').hasClass('switch_off')){
             console.log('0');
-            $(this).closest('.control_switch').find('.switch_status').attr('value', '0');
+            $(this).closest('.switch_section').find('.switch_status').attr('value', '0');
         } else {
             console.log('1');
-            $(this).closest('.control_switch').find('.switch_status').attr('value', '1');
+            $(this).closest('.switch_section').find('.switch_status').attr('value', '1');
         }
     })
     $('.copy_item').click(control_multiple_item);
@@ -180,7 +180,7 @@ $(document).ready(function () {
         let prefix;
         if(!this_.hasClass('.repeater'))
             this_ = this_.closest('.repeater');
-        prefix = this_.attr('data-prefix');
+        prefix = this_.attr('name');
         let count_repeater = this_.children('.content_repeater').children('.content_section').children('.content_item').length;
         console.log('count_repeater = ' + count_repeater);
         console.log('prefix = ' + prefix);
