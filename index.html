@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <title>Admin</title>
+</head>
+<body>
+    <div class="grid_container">
+        <header class="header padding_lr_20">
+            <div class="header_info">
+                <div class="header_icon">
+                    <i class="fas fa-image"></i>
+                </div>
+                <div class="header_text">Редактирование записи</div>
+            </div>
+            <div class="header_admin show_not"><!-- show_not -->
+                <div class="header_admin_notification active">
+                    <i class="fas fa-bell"></i>
+                    <div class="show_triangle none">
+                        <i class="fas fa-caret-up"></i>
+                    </div>
+                </div>
+                <div class="show ">
+                    <div class="notification style_custom_scroll none">
+                        <ul>
+                            <li>
+                                <div class="notification_not_found animate_not_open none ok">
+                                        <div class="notification_message_text ">
+                                            Уведомлений не найдено
+                                        </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="notification_message  ok">
+                                    <div class="notification_message_priority"></div>
+                                    <div class="notification_content">
+                                        <a href="#">
+                                            <div class="notification_message_text">
+                                                Очень длинное уведомление в виде обычного серого текста
+                                                Скорее всего это обычное уведомление
+                                            </div>
+                                            <div class="notification_message_date">
+                                                10:08 21.12.2021
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="notification_message_control">
+                                        <i class="fas fa-times delete_notif"></i>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="notification_message  warning">
+                                    <div class="notification_message_priority"></div>
+                                    <div class="notification_content">
+                                        <a href="#">
+                                            <div class="notification_message_text">
+                                                Очень длинное уведомление в виде обычного серого текста
+                                                Скорее всего это обычное уведомление
+                                            </div>
+                                            <div class="notification_message_date">
+                                                10:08 21.12.2021
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="notification_message_control">
+                                        <i class="fas fa-times delete_notif"></i>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="notification_message  error">
+                                    <div class="notification_message_priority"></div>
+                                    <div class="notification_content">
+                                        <a href="#">
+                                            <div class="notification_message_text">
+                                                Очень длинное уведомление в виде обычного серого текста
+                                                Скорее всего это обычное уведомление
+                                            </div>
+                                            <div class="notification_message_date">
+                                                10:08 21.12.2021
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="notification_message_control">
+                                        <i class="fas fa-times delete_notif"></i>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="notification_message  warning">
+                                    <div class="notification_message_priority"></div>
+                                    <div class="notification_content">
+                                        <a href="#">
+                                            <div class="notification_message_text">
+                                                Очень длинное уведомление в виде обычного серого текста
+                                                Скорее всего это обычное уведомление
+                                            </div>
+                                            <div class="notification_message_date">
+                                                10:08 21.12.2021
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="notification_message_control">
+                                        <i class="fas fa-times delete_notif"></i>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="notification_message  error">
+                                    <div class="notification_message_priority"></div>
+                                    <div class="notification_content">
+                                        <a href="#">
+                                            <div class="notification_message_text">
+                                                Очень длинное уведомление в виде обычного серого текста
+                                                Скорее всего это обычное уведомление
+                                            </div>
+                                            <div class="notification_message_date">
+                                                10:08 21.12.2021
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="notification_message_control">
+                                        <i class="fas fa-times delete_notif"></i>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="header_admin_name">Admin</div>
+                <div class="header_admin_log_out ">
+                    <i class="fas fa-sign-out-alt"></i>
+                </div>
+            </div>
+        </header>
+        <aside class="sidebar">
+            <div class="sidebar_position block_open_sub_menu "> <!-- active -->
+
+                <div class="sidebar_content">
+
+                    <ul class="sidebar_menu_items_list">
+                        <li>
+                            <div class="sidebar_menu_item ladmin">
+                                <div class="sidebar_menu_icon">
+                                    <div class="menu_area">
+                                        <div class="menu"></div>
+                                    </div>
+                                </div>
+                                <div class="sidebar_menu_text">
+                                    LAdmin
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="control_menu "><!-- active -->
+                                <div class="main_menu sidebar_menu_item ">
+                                    <a href="#" >
+                                        <span class="sidebar_menu_icon">
+                                            <i class="fas fa-file"></i>
+                                        </span>
+                                    </a>
+                                    <a href="#" >
+                                        <span class="sidebar_menu_text">Открытое меню</span>
+                                    </a>
+                                    <span class="sidebar_control_menu_item"><!-- none -->
+                                        <i class="fas fa-chevron-down"></i>
+                                    </span>
+                                </div>
+                                <ul class="sidebar_menu_items">
+                                    <li>
+                                        <a href="#" class="sidebar_menu_item active">
+                                            <span class="sidebar_menu_text">Открытое меню Открытое меню Открытое меню Открытое меню Открытое меню Открытое меню Открытое меню Открытое меню Открытое меню</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="sidebar_menu_item">
+                                            <span class="sidebar_menu_text">Открытое меню</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="sidebar_menu_item">
+                                            <span class="sidebar_menu_text">Открытое меню</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="control_menu active"><!-- active -->
+                                <div class="main_menu sidebar_menu_item ">
+                                    <a href="#" >
+                                        <span class="sidebar_menu_icon">
+                                            <i class="fas fa-file"></i>
+                                        </span>
+                                    </a>
+                                    <a href="#" >
+                                        <span class="sidebar_menu_text">Открытое меню</span>
+                                    </a>
+                                    <span class="sidebar_control_menu_item"><!-- none -->
+                                        <i class="fas fa-chevron-down"></i>
+                                    </span>
+                                </div>
+                                <ul class="sidebar_menu_items">
+                                    <li>
+                                        <a href="#" class="sidebar_menu_item active">
+                                            <span class="sidebar_menu_text">Открытое меню Открытое меню Открытое меню Открытое меню Открытое меню Открытое меню Открытое меню Открытое меню Открытое меню</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="sidebar_menu_item">
+                                            <span class="sidebar_menu_text">Открытое меню</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="sidebar_menu_item">
+                                            <span class="sidebar_menu_text">Открытое меню</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="control_menu "><!-- active -->
+                                <div class="main_menu sidebar_menu_item ">
+                                    <a href="#" >
+                                        <span class="sidebar_menu_icon">
+                                            <i class="fas fa-file"></i>
+                                        </span>
+                                    </a>
+                                    <a href="#" >
+                                        <span class="sidebar_menu_text">Открытое меню</span>
+                                    </a>
+                                    <span class="sidebar_control_menu_item none"><!-- none -->
+                                        <i class="fas fa-chevron-down"></i>
+                                    </span>
+                                </div>
+                                <ul class="sidebar_menu_items">
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="control_menu "><!-- active -->
+                                <div class="main_menu sidebar_menu_item ">
+                                    <a href="#" >
+                                        <span class="sidebar_menu_icon">
+                                            <i class="fas fa-file"></i>
+                                        </span>
+                                    </a>
+                                    <a href="#" >
+                                        <span class="sidebar_menu_text">Открытое меню</span>
+                                    </a>
+                                    <span class="sidebar_control_menu_item"><!-- none -->
+                                        <i class="fas fa-chevron-down"></i>
+                                    </span>
+                                </div>
+                                <ul class="sidebar_menu_items">
+                                    <li>
+                                        <a href="#" class="sidebar_menu_item active">
+                                            <span class="sidebar_menu_text">Открытое меню Открытое меню Открытое меню Открытое меню Открытое меню Открытое меню Открытое меню Открытое меню Открытое меню</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="sidebar_menu_item">
+                                            <span class="sidebar_menu_text">Открытое меню</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="sidebar_menu_item">
+                                            <span class="sidebar_menu_text">Открытое меню</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+        <section class="content">
+            <div class="field_section">
+                <div class="field_section_header padding_10">
+                    <div class="header_text">Шапка блока</div>
+                    <div class="header_icon"><i class="fas fa-chevron-up"></i></div>
+                </div>
+                <div class="field_section_container ">
+                    <div class="section_input border_top padding_10 js_find_elem">
+                        <div class="title_section">Название поля<span>*</span></div>
+                        <input class="style_input_field js_paste_name" type="text" name="" data-base_name="name1" required>
+                    </div>
+                    <div class="select_list border_top padding_10 js_find_elem">
+                        <div class="title_section">Название поля<span>*</span></div>
+                        <div class="single_selected_field">
+                            <div class="single_selected_item style_input_field">
+                                <div class="item_text js_paste_name" type="text" name="" data-base_name="name4">Выбор 2</div>
+                                <div class="item_icon ">
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </div>
+                            <div class="single_items_container style_custom_scroll container_hidden"><!-- container_hidden -->
+                                <ul>
+                                    <li>
+                                        <div class="custom_selection_item checked" data-value="0">
+                                            <label class="title_section" for="">Выбор 1</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="custom_selection_item checked" data-value="1">
+                                            <label class="title_section" for="">Выбор 2</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="custom_selection_item checked" data-value="0">
+                                            <label class="title_section" for="">Выбор 3</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="custom_selection_item checked" data-value="0">
+                                            <label class="title_section" for="">Выбор 4</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="custom_selection_item checked" data-value="0">
+                                            <label class="title_section" for="">Выбор 5</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="custom_selection_item checked" data-value="0">
+                                            <label class="title_section" for="">Выбор 6</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="custom_selection_item checked" data-value="0">
+                                            <label class="title_section" for="">Выбор 7</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section_input border_top padding_10 js_find_elem">
+                        <div class="title_section">Название поля<span>*</span></div>
+                        <div class="help_text">Какое-то пояснение к полю на всякий случай</div>
+                        <input class="style_input_field js_paste_name" type="text" name="" data-base_name="name3" type="text" required>
+                    </div>
+                    <div class="section_input border_top padding_10 js_find_elem">
+                        <div class="title_section">Название поля<span>*</span></div>
+                        <textarea rows="5" class="style_input_field style_custom_scroll js_paste_name" type="text" name="" data-base_name="name5" required></textarea>
+                    </div>
+                    <div class="image border_top padding_10 js_find_elem">
+                        <div class="title_section">Картинка<span>*</span></div>
+                        <button class="choice style_button" type="file">Выбрать</button>
+                        <div class="image_section">
+                            <img class="selected_image js_paste_name" type="text" name="" data-base_name="name6" src="assets/img/1.jpg" alt="">
+                            <div class="control_buttons">
+                                <button class="change style_button" type="button">Изменить</button>
+                                <button class="delete style_button" type="button">Удалить</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checkbox_field section_input border_top padding_10 js_find_elem">
+                        <div class="title_section">Название поля<span>*</span></div>
+                        <input type="text" class="none js_paste_name" type="text" name="" data-base_name="name7">
+                        <ul>
+                            <li>
+                                <div class="custom_checkbox checked"> <!--checked-->
+                                    <div class="custom_checkbox_square click"></div>
+                                    <input class="custom_input_text" value="1">
+                                    <label class="title_section click" for="">Галочка активна<span>*</span></label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="custom_checkbox "> <!--checked-->
+                                    <div class="custom_checkbox_square click"></div>
+                                    <input class="custom_input_text" value="0">
+                                    <label class="title_section click" for="">Галочка активна<span>*</span></label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="custom_checkbox "> <!--checked-->
+                                    <div class="custom_checkbox_square click"></div>
+                                    <input class="custom_input_text" value="0">
+                                    <label class="title_section click" for="">Галочка активна<span>*</span></label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="custom_checkbox "> <!--checked-->
+                                    <div class="custom_checkbox_square click"></div>
+                                    <input class="custom_input_text" value="0">
+                                    <label class="title_section click" for="">Галочка активна<span>*</span></label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="repeater border_top padding_10" data-prefix="">
+                        <div class="title_section">Повторитель<span>*</span></div>
+                        <div class="content_repeater"></div>
+                        <div class="repeater_field none">
+                            <div class="content_section repeater_style">
+                                <div class="count_item">
+                                    1
+                                </div>
+                                <div class="content_item">
+                                    <div class="section_input border_top padding_10 js_find_elem">
+                                        <div class="title_section">Название поля<span>*</span></div>
+                                        <input class="style_input_field js_paste_name" type="text" name="" data-base_name="name1" required>
+                                    </div>
+                                    <div class="switch_section border_top padding_10 js_find_elem">
+                                        <div class="title_section">Переключатель<span>*</span></div>
+                                        <div class="control_switch switch_off"><!-- switch_off --->
+                                            <input class="switch_status none js_paste_name"  name="" data-base_name="name2" value="0">
+                                            <div class="custom_switch">
+                                                <div class="custom_switch_on switch_style">ВКЛ</div>
+                                                <div class="custom_switch_off switch_style">ВЫКЛ</div>
+                                                <div class="switch_closed"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="repeater border_top padding_10" data-prefix="">
+                                        <div class="title_section">Повторитель<span>*</span></div>
+                                        <div class="content_repeater"></div>
+                                        <div class="repeater_field none">
+                                            <div class="content_section repeater_style">
+                                                <div class="count_item">
+                                                    1
+                                                </div>
+                                                <div class="content_item">
+                                                    <div class="section_input border_top padding_10 js_find_elem">
+                                                    <div class="title_section">Название поля<span>*</span></div>
+                                                    <input class="style_input_field js_paste_name" type="text" name="" data-base_name="name1" required>
+                                                </div>
+                                                    <div class="select_list border_top padding_10 js_find_elem">
+                                                        <div class="title_section">Название поля<span>*</span></div>
+                                                        <div class="single_selected_field">
+                                                            <div class="single_selected_item style_input_field">
+                                                                <div class="item_text js_paste_name" type="text" name="" data-base_name="name4">Выбор 2</div>
+                                                                <div class="item_icon ">
+                                                                    <i class="fas fa-chevron-down"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="single_items_container style_custom_scroll container_hidden"><!-- container_hidden -->
+                                                                <ul>
+                                                                    <li>
+                                                                        <div class="custom_selection_item checked" data-value="0">
+                                                                            <label class="title_section" for="">Выбор 1</label>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="custom_selection_item checked" data-value="1">
+                                                                            <label class="title_section" for="">Выбор 2</label>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="custom_selection_item checked" data-value="0">
+                                                                            <label class="title_section" for="">Выбор 3</label>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="custom_selection_item checked" data-value="0">
+                                                                            <label class="title_section" for="">Выбор 4</label>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="custom_selection_item checked" data-value="0">
+                                                                            <label class="title_section" for="">Выбор 5</label>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="custom_selection_item checked" data-value="0">
+                                                                            <label class="title_section" for="">Выбор 6</label>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="custom_selection_item checked" data-value="0">
+                                                                            <label class="title_section" for="">Выбор 7</label>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="section_input border_top padding_10 js_find_elem">
+                                                        <div class="title_section">Название поля<span>*</span></div>
+                                                        <div class="help_text">Какое-то пояснение к полю на всякий случай</div>
+                                                        <input class="style_input_field js_paste_name" type="text" name="" data-base_name="name3" type="text" required>
+                                                    </div>
+                                                    <div class="section_input border_top padding_10 js_find_elem">
+                                                        <div class="title_section">Название поля<span>*</span></div>
+                                                        <textarea rows="5" class="style_input_field style_custom_scroll js_paste_name" type="text" name="" data-base_name="name5" required></textarea>
+                                                    </div>
+                                                    <div class="image border_top padding_10 js_find_elem">
+                                                        <div class="title_section">Картинка<span>*</span></div>
+                                                        <button class="choice style_button none" type="file">Выбрать</button>
+                                                        <div class="image_section">
+                                                            <img class="selected_image js_paste_name" type="text" name="" data-base_name="name6" src="assets/img/1.jpg" alt="">
+                                                            <div class="control_buttons">
+                                                                <button class="change style_button" type="button">Изменить</button>
+                                                                <button class="delete style_button" type="button">Удалить</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="checkbox_field section_input border_top padding_10 js_find_elem">
+                                                        <div class="title_section">Название поля<span>*</span></div>
+                                                        <input type="text" class="none js_paste_name" type="text" name="" data-base_name="name7">
+                                                        <ul>
+                                                            <li>
+                                                                <div class="custom_checkbox checked"> <!--checked-->
+                                                                    <div class="custom_checkbox_square click"></div>
+                                                                    <input class="custom_input_text" value="1">
+                                                                    <label class="title_section click" for="">Галочка активна<span>*</span></label>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="custom_checkbox "> <!--checked-->
+                                                                    <div class="custom_checkbox_square click"></div>
+                                                                    <input class="custom_input_text" value="0">
+                                                                    <label class="title_section click" for="">Галочка активна<span>*</span></label>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="custom_checkbox "> <!--checked-->
+                                                                    <div class="custom_checkbox_square click"></div>
+                                                                    <input class="custom_input_text" value="0">
+                                                                    <label class="title_section click" for="">Галочка активна<span>*</span></label>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="custom_checkbox "> <!--checked-->
+                                                                    <div class="custom_checkbox_square click"></div>
+                                                                    <input class="custom_input_text" value="0">
+                                                                    <label class="title_section click" for="">Галочка активна<span>*</span></label>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="control_item border_solid">
+                                                    <div class="add_item">
+                                                        <i class="fas fa-plus position"></i>
+                                                    </div>
+                                                    <div class="delete_item">
+                                                        <i class="fas fa-minus position"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="button_section">
+                                            <button class="add style_button repeater_button" type="button">Добавить</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="control_item border_solid">
+                                    <div class="add_item js_add_section">
+                                        <i class="fas fa-plus position"></i>
+                                    </div>
+                                    <div class="delete_item">
+                                        <i class="fas fa-minus position"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button_section">
+                            <button class="add style_button repeater_button js_add_section" type="button">Добавить</button>
+                        </div>
+                    </div>
+
+                    <div class="multiple_section border_top padding_10 js_find_elem">
+                        <div class="title_section">Двойной список<span>*</span></div>
+                        <input class="style_input_field" type="text" placeholder="Поиск">
+                        <div class="multiple_control">
+                            <div class="multiple_field multiple_section_1 style_custom_scroll">
+                                <input type="custom_input_text" value="0">
+                                <ul>
+                                    <li class="copy_item" data-item_id="1">
+                                        <div class="custom_selection_item " data-value="0">
+                                            <label class="title_section" for="">Выбор 1</label>
+                                        </div>
+                                    </li>
+                                    <li class="copy_item" data-item_id="2">
+                                        <div class="custom_selection_item " data-value="0">
+                                            <label class="title_section" for="">Выбор 2</label>
+                                        </div>
+                                    </li>
+                                    <li class="copy_item" data-item_id="3">
+                                        <div class="custom_selection_item " data-value="0">
+                                            <label class="title_section" for="">Выбор 3</label>
+                                        </div>
+                                    </li>
+                                    <li class="copy_item" data-item_id="4">
+                                        <div class="custom_selection_item " data-value="0">
+                                            <label class="title_section" for="">Выбор 4</label>
+                                        </div>
+                                    </li>
+                                    <li class="copy_item" data-item_id="5">
+                                        <div class="custom_selection_item " data-value="0">
+                                            <label class="title_section" for="">Выбор 5</label>
+                                        </div>
+                                    </li>
+                                    <li class="copy_item" data-item_id="6">
+                                        <div class="custom_selection_item " data-value="0">
+                                            <label class="title_section" for="">Выбор 6</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="multiple_field multiple_section_2 style_custom_scroll">
+                                <input type="custom_input_text" value="0">
+                                <ul class="paste_clone">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="switch_section border_top padding_10 js_find_elem">
+                        <div class="title_section">Переключатель<span>*</span></div>
+                        <div class="control_switch switch_off"><!-- switch_off --->
+                            <input class="switch_status none" value="0">
+                            <div class="custom_switch">
+                                <div class="custom_switch_on switch_style">ВКЛ</div>
+                                <div class="custom_switch_off switch_style">ВЫКЛ</div>
+                                <div class="switch_closed"></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="tab_section border_top padding_10">
+                        <div class="tab_section_tab">
+                            <div data-index-selected="1" class="tab_section_tab_title active">Вкладка</div>
+                            <div data-index-selected="2" class="tab_section_tab_title">Вкладка 2</div>
+                            <div data-index-selected="3" class="tab_section_tab_title ">Вкл</div>
+                            <div data-index-selected="4" class="tab_section_tab_title">Вкладка</div>
+                            <div data-index-selected="5" class="tab_section_tab_title">Вкладка 2</div>
+                            <div data-index-selected="6" class="tab_section_tab_title">Вкл</div>
+                            <div data-index-selected="7" class="tab_section_tab_title">Вкладка</div>
+                            <div data-index-selected="8" class="tab_section_tab_title">Вкладка 2</div>
+                            <div data-index-selected="9" class="tab_section_tab_title">Вкл</div>
+                            <div data-index-selected="10" class="tab_section_tab_title">Вкладка</div>
+                            <div data-index-selected="11" class="tab_section_tab_title">Вкладка 2</div>
+                            <div data-index-selected="12" class="tab_section_tab_title">Вкл</div>
+                        </div>
+                        <div class="fields style_custom_scroll">
+                            <div data-index-selected="1" class="section_tab_field active">
+                                <div class="section_input border_top padding_10">
+                                    <div class="title_section">Название поля<span>*</span></div>
+                                    <input class="style_input_field" type="text" required>
+                                </div>
+                            </div>
+                            <div data-index-selected="2" class="section_tab_field none">
+                                <div class="select_list border_top padding_10">
+                                    <div class="title_section">Название поля<span>*</span></div>
+                                    <div class="single_selected_field">
+                                        <div class="single_selected_item style_input_field">
+                                            <div class="item_text">Выбор 2</div>
+                                            <div class="item_icon ">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </div>
+                                        </div>
+                                        <div class="single_items_container style_custom_scroll container_hidden"><!-- container_hidden -->
+                                            <ul>
+                                                <li>
+                                                    <div class="custom_selection_item checked" data-value="0">
+                                                        <label class="title_section" for="">Выбор 1</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="custom_selection_item checked" data-value="1">
+                                                        <label class="title_section" for="">Выбор 2</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="custom_selection_item checked" data-value="0">
+                                                        <label class="title_section" for="">Выбор 3</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="custom_selection_item checked" data-value="0">
+                                                        <label class="title_section" for="">Выбор 4</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="custom_selection_item checked" data-value="0">
+                                                        <label class="title_section" for="">Выбор 5</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="custom_selection_item checked" data-value="0">
+                                                        <label class="title_section" for="">Выбор 6</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="custom_selection_item checked" data-value="0">
+                                                        <label class="title_section" for="">Выбор 7</label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-index-selected="3" class="section_tab_field none">
+                                <div class="select_list border_top padding_10">
+                                    <div class="title_section">Название поля<span>*</span></div>
+                                    <div class="single_selected_field">
+                                        <div class="single_selected_item style_input_field">
+                                            <div class="item_text">Выбор 2</div>
+                                            <div class="item_icon ">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </div>
+                                        </div>
+                                        <div class="single_items_container style_custom_scroll container_hidden"><!-- container_hidden -->
+                                            <ul>
+                                                <li>
+                                                    <div class="custom_selection_item checked" data-value="0">
+                                                        <label class="title_section" for="">Выбор 1</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="custom_selection_item checked" data-value="1">
+                                                        <label class="title_section" for="">Выбор 2</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="custom_selection_item checked" data-value="0">
+                                                        <label class="title_section" for="">Выбор 3</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="custom_selection_item checked" data-value="0">
+                                                        <label class="title_section" for="">Выбор 4</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="custom_selection_item checked" data-value="0">
+                                                        <label class="title_section" for="">Выбор 5</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="custom_selection_item checked" data-value="0">
+                                                        <label class="title_section" for="">Выбор 6</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="custom_selection_item checked" data-value="0">
+                                                        <label class="title_section" for="">Выбор 7</label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section_input border_top padding_10">
+                                    <div class="title_section">Название поля<span>*</span></div>
+                                    <input class="style_input_field" type="text" required>
+                                </div>
+                                <div class="select_list border_top padding_10">
+                                    <div class="title_section">Название поля<span>*</span></div>
+                                    <div class="single_selected_field">
+                                        <div class="single_selected_item style_input_field">
+                                            <div class="item_text">Выбор 2</div>
+                                            <div class="item_icon ">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </div>
+                                        </div>
+                                        <div class="single_items_container style_custom_scroll container_hidden"><!-- container_hidden -->
+                                            <ul>
+                                                <li>
+                                                    <div class="custom_selection_item checked" data-value="0">
+                                                        <label class="title_section" for="">Выбор 1</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="custom_selection_item checked" data-value="1">
+                                                        <label class="title_section" for="">Выбор 2</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="custom_selection_item checked" data-value="0">
+                                                        <label class="title_section" for="">Выбор 3</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="custom_selection_item checked" data-value="0">
+                                                        <label class="title_section" for="">Выбор 4</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="custom_selection_item checked" data-value="0">
+                                                        <label class="title_section" for="">Выбор 5</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="custom_selection_item checked" data-value="0">
+                                                        <label class="title_section" for="">Выбор 6</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="custom_selection_item checked" data-value="0">
+                                                        <label class="title_section" for="">Выбор 7</label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-index-selected="4" class="section_tab_field none">
+                                <div class="section_input border_top padding_10">
+                                    <div class="title_section">Название поля<span>*</span></div>
+                                    <input class="style_input_field" type="text" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <aside class="sidebar_right">
+
+            <div class="field_section">
+                <div class="field_section_header padding_10">
+                    <div class="header_text">Шапка блока</div>
+                    <div class="header_icon"><i class="fas fa-chevron-up"></i></div>
+                </div>
+                <div class="field_section_container">
+                    <div class="title_fields border_top ">
+                        <div class="title_field padding_10">
+                            <div class="">Оглавление поля: <span>so long information so long information so long information so long information </span></div>
+                        </div>
+                        <div class="title_field padding_10">
+                            <div class="">Оглавление поля: <span>so long information so long information so long information so long information </span></div>
+                        </div>
+                    </div>
+                    <div class="field_section_container_button border_top padding_10">
+                        <button class="delete style_button" type="button">Удалить</button>
+                    </div>
+                    <div class="field_section_container_button border_top padding_10">
+                        <button class="save style_button" type="button">Сохранить</button>
+                    </div>
+                </div>
+            </div>
+
+        </aside>
+
+        <footer class="footer">
+
+        </footer>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
