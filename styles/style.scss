@@ -665,7 +665,13 @@ option{
   //width: ;
   margin: 20px 20px 20px  0;
   background-color: $field_section_colour;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+  "section_header"
+  "section_container";
   &_header{
+    grid-area: section_header;
     height: 40px;
     display: flex;
     justify-content: space-between;
@@ -681,6 +687,8 @@ option{
     }
   }
   &_container{
+    //display: none;
+    grid-area: section_container;
     font-family: $font_Open_Sans;
     font-size: $font_size_container;
     .title_fields {
@@ -696,6 +704,17 @@ option{
       height: 50px;
       display: grid;
       place-items: center end;
+    }
+  }
+}
+
+.hid_block{
+  .field_section_container {
+    display: none;
+  }
+  .field_section_header{
+    .header_icon{
+      transform: rotate(180deg);
     }
   }
 }

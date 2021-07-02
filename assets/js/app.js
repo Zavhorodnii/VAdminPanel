@@ -15,6 +15,10 @@ $(document).ready(function () {
         }
     });
 
+    $('.field_section_header').click(function (event){
+        $(this).closest('.field_section').toggleClass('hid_block');
+    });
+
 
     $('.main_menu').click(function (event) {
         if($(this).closest('.control_menu').hasClass('active')){
@@ -97,7 +101,9 @@ $(document).ready(function () {
         }
         $(this).closest('.custom_checkbox').toggleClass('checked')
     }
-    $('.switch_closed').click(function (event) {
+    $('.switch_closed').click(switch_closed);
+
+    function switch_closed(event) {
         $(this).closest('.custom_switch').toggleClass('switch_off');
         if($(this).closest('.custom_switch').hasClass('switch_off')){
             console.log('0');
@@ -106,7 +112,7 @@ $(document).ready(function () {
             console.log('1');
             $(this).closest('.switch_section').find('.switch_status').attr('value', '1');
         }
-    })
+    }
     $('.copy_item').click(control_multiple_item);
 
     function control_multiple_item(event) {
@@ -146,6 +152,7 @@ $(document).ready(function () {
         let clone = $(this).closest('.repeater').children('.repeater_field').children('.content_section').clone();
         clone.find('.repeater_button').click(add_section);
         clone.find('.add_item').click(add_section);
+        clone.find('.switch_closed').click(switch_closed);
         clone.find('.delete_item').click(delete_item_repeat);
         clone.find('.single_selected_item').click(single_selected_item);
         clone.find('.custom_selection_item').click(custom_selection_item);
@@ -198,7 +205,12 @@ $(document).ready(function () {
                 (
                     function(index2)
                     {
-                        $(this).find('.js_paste_name').attr('name', prefix + 'repeater_' + index + '_' +  $(this).find('.js_paste_name').attr('data-base_name'));
+                        $current_elem = $(this).find('.js_paste_name');
+                        $find_base_name = $current_elem.attr('data-base_name');
+                        if(typeof $find_base_name === typeof undefined || $find_base_name === false){
+                            $current_elem.attr('data-base_name', $current_elem.attr('name'));
+                        }
+                        $current_elem.attr('name', prefix + '_' + index + '_' +  $current_elem.attr('data-base_name'));
                     }
                 );
                 let $repeater = $(this).children('.repeater');
@@ -206,9 +218,15 @@ $(document).ready(function () {
                 (
                     function(index2)
                     {
-                        $(this).attr('data-prefix', 'repeater_' + index + '_')
+                        $repeater_base_name = $(this).attr('data-base_name');
+                        if(typeof $repeater_base_name === typeof undefined || $repeater_base_name === false){
+                            $(this).attr('data-base_name', $(this).attr('name'));
+                        }
+                        console.log('prefix = ' + prefix);
+                        console.log('index = ' + index);
+                        console.log('repeater_base_name = ' + $(this).attr('data-base_name'));
+                        $(this).attr('name', prefix + '_' + index + '_' + $(this).attr('data-base_name') )
                         set_attr_repeat($(this));
-                        console.log('index2 =' + index2);
                     }
                 );
             }

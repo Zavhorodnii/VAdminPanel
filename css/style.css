@@ -420,8 +420,12 @@ option:hover {
 
 .field_section {
   margin: 20px 20px 20px  0;
-  background-color: #ffffff; }
+  background-color: #ffffff;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-areas: "section_header" "section_container"; }
   .field_section_header {
+    grid-area: section_header;
     height: 40px;
     display: flex;
     justify-content: space-between;
@@ -432,6 +436,7 @@ option:hover {
     .field_section_header .header_icon:hover {
       color: #1de8b5; }
   .field_section_container {
+    grid-area: section_container;
     font-family: "Open Sans", sans-serif;
     font-size: 13px; }
     .field_section_container .title_fields .title_field {
@@ -442,6 +447,12 @@ option:hover {
       height: 50px;
       display: grid;
       place-items: center end; }
+
+.hid_block .field_section_container {
+  display: none; }
+
+.hid_block .field_section_header .header_icon {
+  transform: rotate(180deg); }
 
 .content .field_section {
   margin-left: 20px; }
