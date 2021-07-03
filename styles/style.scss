@@ -82,10 +82,16 @@ body{
 
 a{
   text-decoration: none;
+  color: black;
+  &:hover{
+    color: $hover_colour;
+    transition: all .2s ease-out;
+  }
 }
 button{
   background-color: $background_colour;
-  transition: all .3s ease-out;
+
+  transition: background-color .3s ease-out;
   outline: none;
 }
 textarea{
@@ -639,9 +645,13 @@ option{
 
 .style_button{
   width: 120px;
-  height: 30px;
+  height: 30px !important;
   border: none;
   cursor: pointer;
+  &:hover{
+    background-color: $hover_colour;
+    transition: all .3s ease-out;
+  }
 }
 
 .delete{
@@ -1149,5 +1159,181 @@ option{
       opacity: 1;
       visibility: visible;
     }
+  }
+}
+
+// popup
+
+.animate-bg-popup{
+  animation: bg-popup .5s ease-out;
+  visibility: visible !important;
+
+  & .animate-show-popup{
+    visibility: visible !important;
+    animation: show-popup 1s ease-out ;
+  }
+}
+@keyframes bg-popup {
+  0%{
+    opacity: 0;
+    visibility: hidden;
+  }
+  20%{
+    opacity: 0;
+    visibility: hidden;
+  }
+  100%{
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes show-popup {
+  0%{
+    visibility: hidden;
+    top: -1vh;
+  }
+  100%{
+
+  }
+}
+
+.animate-bg-popup-close{
+  animation: bg-popup-close .6s ease-out;
+  //visibility: visible !important;
+
+  & .animate-show-popup{
+    //visibility: hidden !important;
+    animation: close-popup .4s ease-out ;
+  }
+}
+@keyframes bg-popup-close {
+  0%{
+    opacity: 1;
+    visibility: visible;
+  }
+  60%{
+    opacity: 1;
+    visibility: visible;
+  }
+  100%{
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes close-popup {
+  0%{
+    visibility: visible;
+    opacity: 1;
+  }
+  //50%{
+  //  top: -1vh;
+  //}
+  100%{
+    top: -1vh;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.popup {
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  //overflow: hidden;
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  .remove:hover{
+    color: $colour_hover_delete_icon_awesome;
+  }
+
+  &-container {
+    width: 870px;
+    height: 650px;
+    background-color: #ffffff;
+    position: absolute;
+    visibility: hidden;
+    content: "";
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.select_file{
+  .upload-field {
+    display: flex;
+
+    .upload-status {
+      width: 300px;
+      height: 20px;
+      border: 2px solid $background_colour;
+      .upload-progress {
+        height: 100%;
+        width: 20%;
+        background-color: $header_background_colour;
+      }
+    }
+    .stop-upload-file{
+      margin-left: 10px;
+      &:hover{
+        color: $colour_hover_delete_icon_awesome;
+      }
+    }
+  }
+}
+
+.file-manager{
+  display: grid;
+  grid-template-columns: 1fr 250px;
+  grid-template-rows: 430px;
+  grid-template-areas:
+  "all_files file_info";
+
+  .all-files{
+    grid-area: all_files;
+    //background-color: #E8F6EF;
+    .uploaded_files{
+      overflow-y: scroll;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      //background-color: #0d7377;
+      justify-content: center;
+      .single_item{
+        width: 130px;
+        height: 130px;
+        margin: 5px;
+        background-color: #d3d3d3;
+        display: flex;
+        align-items: center;
+
+        transition: background-color .3s ease-out;
+        &:hover{
+          background-color: $hover_colour;
+        }
+        .single-upload-file{
+          width: 100%;
+        }
+      }
+      .selected-file{
+        background-color: $header_background_colour ;
+      }
+    }
+    .show_more{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .file-info{
+    grid-area: file_info;
+    //background-color: #EDF6E5;
   }
 }

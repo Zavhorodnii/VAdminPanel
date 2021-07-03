@@ -14,11 +14,15 @@ body {
   font-size: 14px; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: black; }
+  a:hover {
+    color: #1de8b5;
+    transition: all .2s ease-out; }
 
 button {
   background-color: #d3d3d3;
-  transition: all .3s ease-out;
+  transition: background-color .3s ease-out;
   outline: none; }
 
 textarea {
@@ -404,9 +408,12 @@ option:hover {
 
 .style_button {
   width: 120px;
-  height: 30px;
+  height: 30px !important;
   border: none;
   cursor: pointer; }
+  .style_button:hover {
+    background-color: #1de8b5;
+    transition: all .3s ease-out; }
 
 .delete:hover {
   color: #ffffff;
@@ -773,3 +780,124 @@ option:hover {
   height: 100%;
   opacity: 1;
   visibility: visible; }
+
+.animate-bg-popup {
+  animation: bg-popup .5s ease-out;
+  visibility: visible !important; }
+  .animate-bg-popup .animate-show-popup {
+    visibility: visible !important;
+    animation: show-popup 1s ease-out; }
+
+@keyframes bg-popup {
+  0% {
+    opacity: 0;
+    visibility: hidden; }
+  20% {
+    opacity: 0;
+    visibility: hidden; }
+  100% {
+    opacity: 1;
+    visibility: visible; } }
+
+@keyframes show-popup {
+  0% {
+    visibility: hidden;
+    top: -1vh; }
+  100% { } }
+
+.animate-bg-popup-close {
+  animation: bg-popup-close .6s ease-out; }
+  .animate-bg-popup-close .animate-show-popup {
+    animation: close-popup .4s ease-out; }
+
+@keyframes bg-popup-close {
+  0% {
+    opacity: 1;
+    visibility: visible; }
+  60% {
+    opacity: 1;
+    visibility: visible; }
+  100% {
+    opacity: 0;
+    visibility: hidden; } }
+
+@keyframes close-popup {
+  0% {
+    visibility: visible;
+    opacity: 1; }
+  100% {
+    top: -1vh;
+    opacity: 0;
+    visibility: hidden; } }
+
+.popup {
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100; }
+  .popup .remove:hover {
+    color: #ec4646; }
+  .popup-container {
+    width: 870px;
+    height: 650px;
+    background-color: #ffffff;
+    position: absolute;
+    visibility: hidden;
+    content: "";
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%); }
+
+.select_file .upload-field {
+  display: flex; }
+  .select_file .upload-field .upload-status {
+    width: 300px;
+    height: 20px;
+    border: 2px solid #d3d3d3; }
+    .select_file .upload-field .upload-status .upload-progress {
+      height: 100%;
+      width: 20%;
+      background-color: #0d7377; }
+  .select_file .upload-field .stop-upload-file {
+    margin-left: 10px; }
+    .select_file .upload-field .stop-upload-file:hover {
+      color: #ec4646; }
+
+.file-manager {
+  display: grid;
+  grid-template-columns: 1fr 250px;
+  grid-template-rows: 430px;
+  grid-template-areas: "all_files file_info"; }
+  .file-manager .all-files {
+    grid-area: all_files; }
+    .file-manager .all-files .uploaded_files {
+      overflow-y: scroll;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; }
+      .file-manager .all-files .uploaded_files .single_item {
+        width: 130px;
+        height: 130px;
+        margin: 5px;
+        background-color: #d3d3d3;
+        display: flex;
+        align-items: center;
+        transition: background-color .3s ease-out; }
+        .file-manager .all-files .uploaded_files .single_item:hover {
+          background-color: #1de8b5; }
+        .file-manager .all-files .uploaded_files .single_item .single-upload-file {
+          width: 100%; }
+      .file-manager .all-files .uploaded_files .selected-file {
+        background-color: #0d7377; }
+    .file-manager .all-files .show_more {
+      width: 100%;
+      display: flex;
+      justify-content: center; }
+  .file-manager .file-info {
+    grid-area: file_info; }
