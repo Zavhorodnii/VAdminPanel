@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,
 *:before,
 *:after {
@@ -39,6 +40,22 @@ option:checked {
 option:hover {
   outline: none;
   background-color: #1de8b5 !important; }
+
+.custom-file-input {
+  width: 123px; }
+  .custom-file-input:hover::before {
+    transition: all .3s ease-out;
+    background: #1de8b5; }
+
+.custom-file-input::before {
+  width: 123px;
+  text-align: center;
+  content: 'Загрузить файл';
+  display: inline-block;
+  background: #d3d3d3;
+  padding: 5px 8px;
+  -webkit-user-select: none;
+  cursor: pointer; }
 
 .padding_10 {
   padding: 10px; }
@@ -426,7 +443,7 @@ option:hover {
   background-color: #1de8b5; }
 
 .field_section {
-  margin: 20px 20px 20px  0;
+  margin: 20px 20px 20px 0;
   background-color: #ffffff;
   display: grid;
   grid-template-rows: 1fr;

@@ -65,7 +65,7 @@ $ladmin_font_size: 24px;
 
 *,
 *:before,
-*:after{
+*:after {
   padding: 0;
   margin: 0;
   border: 0;
@@ -73,54 +73,88 @@ $ladmin_font_size: 24px;
 }
 
 html,
-body{
+body {
   height: 100%;
   font-family: $font_Open_Sans;
   font-weight: 400;
   font-size: 14px;
 }
 
-a{
+a {
   text-decoration: none;
   color: black;
-  &:hover{
+
+  &:hover {
     color: $hover_colour;
     transition: all .2s ease-out;
   }
 }
-button{
+
+button {
   background-color: $background_colour;
 
   transition: background-color .3s ease-out;
   outline: none;
 }
-textarea{
+
+textarea {
   resize: vertical;
 }
-li{
+
+li {
   list-style-type: none;
   align-items: center;
 }
 
-option{
+option {
   &:checked {
     color: $selected_text_color;
     background: $selected_color linear-gradient(0deg, $selected_color 0%, $selected_color 100%);
   }
-  &:hover{
+
+  &:hover {
     outline: none;
     background-color: $hover_colour !important;
   }
 }
 
-.padding_10{
+
+.custom-file-input {
+  width: 123px;
+
+  &:hover {
+
+    &::before {
+
+      transition: all .3s ease-out;
+      background: $hover_colour;
+
+    }
+  }
+}
+
+
+.custom-file-input::before {
+  width: 123px;
+  text-align: center;
+  content: 'Загрузить файл';
+  display: inline-block;
+  background: $background_colour;
+  padding: 5px 8px;
+  -webkit-user-select: none;
+  cursor: pointer;
+}
+
+
+.padding_10 {
   padding: 10px;
 }
-.padding_lr_20{
+
+.padding_lr_20 {
   padding: 0 20px 0 20px;
 }
 
-.grid_container{
+.grid_container {
   display: grid;
   min-height: 100vh;
   grid-template: minmax(50px, auto) 1fr 60px / minmax(auto, auto) 1fr 370px;
@@ -129,7 +163,8 @@ option{
   "sidebar content sidebar_right"
   "sidebar footer_site footer_site";
 }
-.header{
+
+.header {
   position: sticky;
   top: 0;
   z-index: 100;
@@ -139,27 +174,32 @@ option{
   grid-template: auto/ auto auto;
   place-content: center space-between;
   font-family: $font_Open_Sans;
-  &_info{
+
+  &_info {
     cursor: default;
     height: 100%;
     display: flex;
     align-items: center;
     color: $header_text_colour;
     font-size: $font-size_header;
-    .header_icon{
+
+    .header_icon {
       margin-right: 20px;
     }
   }
-  &_admin{
+
+  &_admin {
     height: 100%;
     display: flex;
     align-items: center;
     font-size: $font_size_admin_header;
     color: $header_admin_text_colour;
-    .header_admin_notification{
+
+    .header_admin_notification {
       cursor: pointer;
       position: relative;
-      .show_triangle{
+
+      .show_triangle {
         display: block;
         position: absolute;
         top: 7px;
@@ -168,11 +208,13 @@ option{
         color: $field_section_colour;
       }
     }
-    .show_triangle{
+
+    .show_triangle {
       display: none;
     }
-    .show{
-      .notification{
+
+    .show {
+      .notification {
         position: absolute;
         top: 50px;
         right: 20px;
@@ -180,30 +222,35 @@ option{
         max-height: 300px;
         overflow-y: scroll;
         background-color: #ffffff;
-        box-shadow:
-                6px 6px 13px -1px $shadow_notification_colour,
-                -6px 6px 13px -1px $shadow_notification_colour;
+        box-shadow: 6px 6px 13px -1px $shadow_notification_colour,
+        -6px 6px 13px -1px $shadow_notification_colour;
 
 
-        .error{
+        .error {
           background-color: $error_bg_message_notification;
-          .notification_message_priority{
+
+          .notification_message_priority {
             background-color: $error_message_notification;
           }
         }
-        .warning{
+
+        .warning {
           background-color: $warning_bg_message_notification;
-          .notification_message_priority{
+
+          .notification_message_priority {
             background-color: $warning_message_notification;
           }
         }
-        .ok{
+
+        .ok {
           background-color: $ok_bg_message_notification;
-          .notification_message_priority{
+
+          .notification_message_priority {
             background-color: $ok_message_notification;
           }
         }
-        .notification_message{
+
+        .notification_message {
           opacity: 0;
           //visibility: hidden;
           max-height: 0;
@@ -211,65 +258,73 @@ option{
         }
 
         @keyframes hide_notification_mes {
-          0%{
+          0% {
             opacity: 1;
             width: 100%;
             visibility: visible;
             max-height: 97px;
           }
-          100%{
+          100% {
             opacity: 1;
             max-height: 0;
           }
         }
 
-        .notification_not_found{
+        .notification_not_found {
           color: $default_text_color;
           padding: 5px;
-          .notification_message_text{
+
+          .notification_message_text {
             animation: hide_notification_mes .3s linear;
           }
+
           @keyframes ttttt {
-            0%{
+            0% {
               max-height: 97px;
             }
-            100%{
+            100% {
               max-height: 0;
             }
           }
         }
 
-        .animate_not_open{
+        .animate_not_open {
           max-height: 97px;
-          & .notification_message_text{
+
+          & .notification_message_text {
             animation: show_notification_not_found .5s linear;
           }
         }
+
         @keyframes show_notification_not_found {
-          0%{
+          0% {
             max-height: 0;
           }
-          100%{
+          100% {
             max-height: 97px;
           }
         }
       }
     }
+
     //&
-    .header_admin_name{
+    .header_admin_name {
       margin: 0 10px;
       cursor: pointer;
     }
-    .header_admin_log_out{
+
+    .header_admin_log_out {
       cursor: pointer;
       //position: relative;
     }
 
   }
-  .show_not{
-    .active{
+
+  .show_not {
+    .active {
       position: relative;
-      &:before{
+
+      &:before {
         content: '';
         width: 10px;
         height: 10px;
@@ -281,32 +336,36 @@ option{
       }
 
     }
+
     .notification {
 
-      .notification_not_found{
+      .notification_not_found {
         padding: 5px 5px;
         opacity: 1;
         color: $default_text_color;
       }
 
-      & .notification_message{
+      & .notification_message {
         opacity: 1;
         visibility: visible;
         color: $default_text_color;
         overflow: hidden;
         display: grid;
         grid-template: auto / 5px 1fr 25px;
-        .notification_message_priority{
+
+        .notification_message_priority {
           margin: 5px 0;
         }
-        .notification_content{
+
+        .notification_content {
           cursor: pointer;
           display: grid;
           grid-template: 1fr auto / 1fr;
           grid-template-areas:
                   "grid_message_text"
                   "grid_message_date";
-          .notification_message_text{
+
+          .notification_message_text {
             grid-area: grid_message_text;
             color: $default_text_color;
             font-size: $font_size_sidebar_text;
@@ -314,7 +373,8 @@ option{
             max-height: 50px;
             overflow: hidden;
           }
-          .notification_message_date{
+
+          .notification_message_date {
             grid-area: grid_message_date;
             height: 40px;
             display: grid;
@@ -324,27 +384,31 @@ option{
             font-size: $font_size_help_text;
           }
         }
-        .notification_message_control{
+
+        .notification_message_control {
           .delete_notif {
             margin-top: 5px;
             display: grid;
             place-items: start center;
             color: $default_text_color;
+
             &:hover {
               color: $delete_colour;
             }
           }
         }
       }
-      .active_show{
+
+      .active_show {
         max-height: 100%;
         animation: show_notification_mes .4s linear;
       }
+
       @keyframes show_notification_mes {
-        0%{
+        0% {
           max-height: 0;
         }
-        100%{
+        100% {
           max-height: 97px;
         }
       }
@@ -354,11 +418,12 @@ option{
   }
 }
 
-.sidebar{
+.sidebar {
   grid-area: sidebar;
   background-color: $left_background_sidebar_colour;
-  .block_open_sub_menu{
-    & .sidebar_content{
+
+  .block_open_sub_menu {
+    & .sidebar_content {
       .control_menu {
         .sidebar_menu_items {
           display: none !important;
@@ -366,32 +431,37 @@ option{
       }
     }
   }
-  .sidebar_position{
+
+  .sidebar_position {
     position: sticky;
     top: 0;
 
-    .sidebar_content{
-      .control_menu{
+    .sidebar_content {
+      .control_menu {
 
-        .sidebar_menu_items{
+        .sidebar_menu_items {
           opacity: 0;
           visibility: hidden;
           height: 0;
           transition: all .5s linear;
-          .sidebar_menu_item{
+
+          .sidebar_menu_item {
             animation: hide_sub_menu .5s linear;
-            .sidebar_menu_text{
-              animation: hide_sub_menu_text .5s ease-out ;
+
+            .sidebar_menu_text {
+              animation: hide_sub_menu_text .5s ease-out;
             }
           }
         }
       }
-      .sidebar_menu_item{
+
+      .sidebar_menu_item {
         display: grid;
         grid-template: 50px / 50px 175px 25px;
         grid-template-areas:
                 "menu_icon menu_text control_nmenu_item";
-        .sidebar_menu_icon{
+
+        .sidebar_menu_icon {
           grid-area: menu_icon;
           display: grid;
           //grid-template: 1fr / 1fr;
@@ -402,7 +472,8 @@ option{
           font-size: $font_size_sidebar_icon;
           transition: all .3s ease-out;
         }
-        .sidebar_menu_text{
+
+        .sidebar_menu_text {
           overflow: hidden;
           grid-area: menu_text;
           display: grid;
@@ -412,7 +483,8 @@ option{
           font-size: $font_size_sidebar_text;
           transition: all .3s ease-out;
         }
-        .sidebar_control_menu_item{
+
+        .sidebar_control_menu_item {
           grid-area: control_nmenu_item;
           color: $sidebar_icon_colour;
           display: grid;
@@ -421,11 +493,13 @@ option{
         }
 
         transition: all .3s ease-out;
-        &:hover{
+
+        &:hover {
           background-color: $hover_colour;
+
           .sidebar_control_menu_item,
           .sidebar_menu_icon,
-          .sidebar_menu_text{
+          .sidebar_menu_text {
             color: $default_text_color;
           }
         }
@@ -433,107 +507,126 @@ option{
 
       .active {
         width: 100% !important;
-        .main_menu{
+
+        .main_menu {
           background-color: $selected_color;
-          &:hover{
+
+          &:hover {
             background-color: $hover_colour;
           }
-          & .sidebar_control_menu_item{
+
+          & .sidebar_control_menu_item {
             transform: rotate(180deg);
           }
         }
+
         .sidebar_menu_items {
           opacity: 1;
           visibility: visible;
           height: 100%;
           display: block;
           background-color: $left_background_sidebar_submenu_colour;
+
           .sidebar_menu_item:hover {
             background-color: $left_background_sidebar_submenu_colour;
+
             .sidebar_menu_text:hover {
               color: $hover_colour;
             }
           }
-          .sidebar_menu_item{
+
+          .sidebar_menu_item {
             height: 0;
             animation: hide_sub_menu .5s linear;
-            .sidebar_menu_text{
+
+            .sidebar_menu_text {
               overflow: hidden;
               line-height: 50px;
               opacity: 0;
-              animation: hide_sub_menu_text .5s ease-out ;
+              animation: hide_sub_menu_text .5s ease-out;
             }
           }
-          .active .sidebar_menu_text{
+
+          .active .sidebar_menu_text {
             color: $selected_color;
             //font-weight: 600;
           }
+
           @keyframes hide_sub_menu {
-            0%{
+            0% {
               height: 50px;
             }
-            100%{
+            100% {
               height: 0;
             }
           }
           @keyframes hide_sub_menu_text {
-            0%{
+            0% {
               opacity: 1;
             }
-            50%{
+            50% {
               opacity: 0;
             }
-            100%{
+            100% {
               opacity: 0;
             }
           }
         }
       }
-      .ladmin{
-        & .sidebar_menu_text{
-          color: $left_text_sidebar_colour ;
-          font-size: $ladmin_font_size ;
+
+      .ladmin {
+        & .sidebar_menu_text {
+          color: $left_text_sidebar_colour;
+          font-size: $ladmin_font_size;
         }
-        &:hover{
+
+        &:hover {
           background-color: $left_background_sidebar_colour;
-          .sidebar_menu_text{
-            color: $left_text_sidebar_colour ;
+
+          .sidebar_menu_text {
+            color: $left_text_sidebar_colour;
           }
         }
+
         .sidebar_menu_icon {
-          .menu_area{
+          .menu_area {
 
             display: grid;
             place-items: center;
             width: 25px;
             height: 20px;
             cursor: pointer;
-            &:hover{
+
+            &:hover {
               .menu:before,
               .menu:after,
-              .menu{
+              .menu {
                 background-color: $hover_colour;
               }
             }
-            .menu{
+
+            .menu {
               display: grid;
               place-items: center;
               width: 100%;
               height: 4px;
               position: relative;
               background-color: $sidebar_icon_colour;
+
               &:before,
-              &:after{
+              &:after {
                 content: "";
                 width: 100%;
                 height: 4px;
                 position: absolute;
                 background-color: $sidebar_icon_colour;
               }
-              &:before{
+
+              &:before {
                 top: -8px;
               }
-              &:after{
+
+              &:after {
                 top: 8px;
               }
             }
@@ -541,67 +634,78 @@ option{
         }
       }
     }
+
     width: 50px;
 
   }
-  .sidebar_animation_hide{
+
+  .sidebar_animation_hide {
     animation: sidebar_menu_hide .5s ease-out;
     @keyframes sidebar_menu_hide {
-      0%{
+      0% {
         width: 250px;
       }
-      100%{
+      100% {
         width: 50px;
       }
     }
   }
-  .active{
-    & .sidebar_content{
+
+  .active {
+    & .sidebar_content {
       .active {
-        .main_menu{
+        .main_menu {
           background-color: $selected_color;
-          &:hover{
+
+          &:hover {
             background-color: $hover_colour;
           }
         }
+
         .sidebar_menu_items {
           display: block;
           background-color: $left_background_sidebar_submenu_colour;
+
           .sidebar_menu_item:hover {
             background-color: $left_background_sidebar_submenu_colour;
+
             .sidebar_menu_text:hover {
               color: $hover_colour;
             }
           }
-          .sidebar_menu_item{
+
+          .sidebar_menu_item {
             height: 100%;
             overflow: hidden;
             animation: show_sub_menu .5s linear;
-            .sidebar_menu_text{
+
+            .sidebar_menu_text {
               opacity: 1;
-              animation: show_sub_menu_text .7s ease-out ;
+              animation: show_sub_menu_text .7s ease-out;
             }
           }
-          .active .sidebar_menu_text{
+
+          .active .sidebar_menu_text {
             //color: $selected_color;
             //font-weight: 600;
           }
+
           @keyframes show_sub_menu {
-            0%{
+            0% {
               height: 0;
             }
-            100%{
+            100% {
               height: 50px;
             }
           }
           @keyframes show_sub_menu_text {
-            0%{
+            0% {
               opacity: 0;
             }
-            80%{
+            80% {
               opacity: 0;
             }
-            100%{
+            100% {
               opacity: 1;
             }
           }
@@ -612,105 +716,114 @@ option{
     width: 250px;
     animation: sidebar_menu_active .5s ease-out;
     @keyframes sidebar_menu_active {
-      0%{
+      0% {
         width: 50px;
       }
-      100%{
+      100% {
         width: 250px;
       }
     }
   }
 }
 
-.footer{
+.footer {
   grid-area: footer_site;
   background-color: $left_background_sidebar_submenu_colour;
 }
 
 
-.content{
+.content {
   z-index: 10;
   grid-area: content;
   background-color: $background_colour;
 }
 
-.sidebar_right{
+.sidebar_right {
   grid-area: sidebar_right;
   background-color: $background_colour;
 }
 
-.border_top{
+.border_top {
   border-top: 1px solid $background_colour;
 }
 
-.style_button{
+.style_button {
   width: 120px;
   height: 30px !important;
   border: none;
   cursor: pointer;
-  &:hover{
+
+  &:hover {
     background-color: $hover_colour;
     transition: all .3s ease-out;
   }
 }
 
-.delete{
-  &:hover{
+.delete {
+  &:hover {
     color: $delete_text_colour;
     background-color: $delete_colour;
   }
 }
-.save{
-  &:hover{
+
+.save {
+  &:hover {
     background-color: $save_colour;
   }
 }
-.change{
-  &:hover{
+
+.change {
+  &:hover {
     background-color: $change_colour;
   }
 }
 
-.field_section{
+.field_section {
   //width: ;
-  margin: 20px 20px 20px  0;
+  margin: 20px 20px 20px 0;
   background-color: $field_section_colour;
   display: grid;
   grid-template-rows: 1fr;
   grid-template-areas:
   "section_header"
   "section_container";
-  &_header{
+
+  &_header {
     grid-area: section_header;
     height: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .header_text{
+
+    .header_text {
       color: $default_text_color;
       font-size: $font_size_title_block;
     }
-    .header_icon{
-      &:hover{
+
+    .header_icon {
+      &:hover {
         color: $hover_colour;
       }
     }
   }
-  &_container{
+
+  &_container {
     //display: none;
     grid-area: section_container;
     font-family: $font_Open_Sans;
     font-size: $font_size_container;
+
     .title_fields {
       .title_field {
         align-items: center;
-        & span{
+
+        & span {
           font-weight: 600;
         }
       }
     }
 
-    &_button{
+    &_button {
       height: 50px;
       display: grid;
       place-items: center end;
@@ -718,36 +831,41 @@ option{
   }
 }
 
-.hid_block{
+.hid_block {
   .field_section_container {
     display: none;
   }
-  .field_section_header{
-    .header_icon{
+
+  .field_section_header {
+    .header_icon {
       transform: rotate(180deg);
     }
   }
 }
 
-.content{
-  .field_section{
+.content {
+  .field_section {
     margin-left: 20px;
   }
 }
-.title_section{
+
+.title_section {
   font-weight: 600;
   margin-bottom: 5px;
-  & span{
+
+  & span {
     color: $required_text_colour;
   }
 }
-.help_text{
+
+.help_text {
   font-size: $font_size_help_text;
   //font-weight: 400;
   font-style: italic;
   margin-bottom: 5px;
 }
-.style_input_field{
+
+.style_input_field {
   width: 100%;
   font-family: $font_Open_Sans;
   font-size: $font_size_input;
@@ -756,23 +874,28 @@ option{
   padding: 5px;
   border: 1px solid $border_colour;
 }
-.selected_image{
+
+.selected_image {
   height: 150px;
   transition: all .3s ease-out;
 
 }
-.image_section{
+
+.image_section {
   position: relative;
   width: fit-content;
+
   &:hover {
-   & .selected_image {
+    & .selected_image {
       opacity: 70%;
     }
+
     & .control_buttons {
       opacity: 1;
     }
   }
-  .control_buttons{
+
+  .control_buttons {
     opacity: 0;
     position: absolute;
     width: content-box;
@@ -780,18 +903,20 @@ option{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    .style_button{
+
+    .style_button {
       margin: 10px;
     }
   }
 }
 
-.custom_checkbox{
+.custom_checkbox {
   display: flex;
   align-items: center;
   cursor: pointer;
   width: fit-content;
   z-index: 5;
+
   &_square {
     width: 13px;
     height: 13px;
@@ -800,14 +925,17 @@ option{
     margin-right: 5px;
     position: relative;
   }
-  & input{
+
+  & input {
     display: none;
   }
-  .title_section{
+
+  .title_section {
     margin: 0;
   }
-  &:hover{
-    .custom_checkbox_square:before{
+
+  &:hover {
+    .custom_checkbox_square:before {
       position: absolute;
       top: -5px;
       left: 4px;
@@ -822,8 +950,8 @@ option{
   }
 }
 
-.checked{
-  .custom_checkbox_square:before{
+.checked {
+  .custom_checkbox_square:before {
     position: absolute;
     top: -5px;
     left: 4px;
@@ -837,15 +965,16 @@ option{
   }
 }
 
-.none{
+.none {
   display: none !important;
 }
 
-.button_section{
+.button_section {
   display: grid;
   place-items: end;
   padding-top: 10px;
 }
+
 .repeater {
   .repeater_style {
     display: grid;
@@ -896,6 +1025,7 @@ option{
       .delete_item {
         grid-area: delete_item;
         position: relative;
+
         .position:hover {
           color: $delete_text_colour;
           background-color: $colour_hover_delete_icon_awesome;
@@ -918,24 +1048,28 @@ option{
       }
     }
   }
-  .button_section{
-    .style_button:hover{
+
+  .button_section {
+    .style_button:hover {
       background-color: $add_colour;
     }
   }
 }
 
-.single_selected_field{
+.single_selected_field {
   position: relative;
-  .single_selected_item{
+
+  .single_selected_item {
     display: grid;
     grid-template: 1fr / 1fr 15px;
     //height: 30px;
     color: $default_text_color;
-    .item_text{
+
+    .item_text {
       overflow: hidden;
     }
-    .item_icon{
+
+    .item_icon {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -943,15 +1077,18 @@ option{
       height: 100%;
       cursor: pointer;
       transition: all .3s ease-out;
-      &:hover{
+
+      &:hover {
         color: $hover_colour;
       }
     }
-    .open_single{
+
+    .open_single {
       transform: rotate(180deg);
     }
   }
-  .single_items_container{
+
+  .single_items_container {
     color: $default_text_color;
     border: 1px solid $border_colour;
     background-color: $field_section_colour;
@@ -963,9 +1100,11 @@ option{
     overflow-y: auto;
     z-index: 20;
   }
-  .container_hidden{
+
+  .container_hidden {
     border: transparent;
-    & .custom_selection_item{
+
+    & .custom_selection_item {
       height: 0;
       opacity: 0;
       visibility: hidden;
@@ -973,7 +1112,7 @@ option{
   }
 }
 
-.style_custom_scroll{
+.style_custom_scroll {
   &::-webkit-scrollbar {
     width: 7px;
     background-color: transparent;
@@ -981,119 +1120,133 @@ option{
     left: 10px;
     top: 10px;
   }
+
   &::-webkit-scrollbar-thumb {
     background-color: $header_background_colour;
   }
-  &::-webkit-scrollbar-button{
+
+  &::-webkit-scrollbar-button {
     display: none;
   }
-  &::-webkit-scrollbar-track{
+
+  &::-webkit-scrollbar-track {
     //background-color: #e8f9fa;
     //display: none;
   }
-  &::selection  {
+
+  &::selection {
     background-color: $selected_color;
     color: $selected_text_color;
   }
 }
 
-.multiple_section{
-  input{
+.multiple_section {
+  input {
     width: calc(50% - 5px);
     margin-bottom: 10px;
   }
 }
 
-.multiple_control{
+.multiple_control {
   display: grid;
-  grid-template: 1fr / 1fr 1fr ;
+  grid-template: 1fr / 1fr 1fr;
   grid-template-areas:
   "multiple_section_1 multiple_section_2";
   grid-column-gap: 10px;
-  .multiple_section_1{
+
+  .multiple_section_1 {
     grid-area: multiple_section_1;
     background-color: $input_box_bg_color;
   }
-  .multiple_section_2{
+
+  .multiple_section_2 {
     grid-area: multiple_section_2;
     background-color: $input_box_bg_color;
   }
-  .multiple_field{
+
+  .multiple_field {
     width: 100%;
     height: 142px;
     border: 1px solid $border_colour;
     overflow-y: auto;
-    input{
+
+    input {
       display: none;
     }
   }
 }
 
-.custom_selection_item{
+.custom_selection_item {
   padding: 0 5px;
   height: 20px;
   display: grid;
   place-items: center start;
   font-size: $font_size_multiple_select;
   transition: all .2s ease-out;
-  &:hover{
+
+  &:hover {
     background-color: $hover_colour;
   }
-  &[data-value='1']{
+
+  &[data-value='1'] {
     background-color: $selected_color;
     color: $selected_text_color;
 
-    &:hover{
+    &:hover {
       background-color: $hover_colour;
       color: $default_text_color;
     }
   }
 }
 
-.switch_section{
+.switch_section {
   //$switch_off_color $switch_text_color
   .switch_off {
     //& .custom_switch {
-      & .switch_closed {
-        animation: turn_off_animate .4s ease-out;
-        left: 1px !important;
-      }
+    & .switch_closed {
+      animation: turn_off_animate .4s ease-out;
+      left: 1px !important;
+    }
 
-      @keyframes turn_off_animate {
-        0% {
-          left: 44px;
-        }
-        100% {
-          left: 1px;
-        }
+    @keyframes turn_off_animate {
+      0% {
+        left: 44px;
       }
+      100% {
+        left: 1px;
+      }
+    }
 
-      & .switch_style {
-        border: 1px solid $switch_off_color !important;
-      }
+    & .switch_style {
+      border: 1px solid $switch_off_color !important;
+    }
+
     //}
   }
 
-  .custom_switch{
+  .custom_switch {
     position: relative;
     display: grid;
     grid-template: 25px / repeat(2, 45px);
     place-items: center;
     grid-template-areas:
     "switch_on switch_off";
-    &_on{
+
+    &_on {
       grid-area: switch_on;
       color: $switch_text_color;
       background-color: $switch_on_color;
       cursor: default;
     }
-    &_off{
+
+    &_off {
       grid-area: switch_off;
       color: $switch_text_color;
       background-color: $switch_off_color;
       cursor: default;
     }
-    .switch_style{
+
+    .switch_style {
       width: 100%;
       height: 100%;
       border: 1px solid $switch_on_color;
@@ -1102,7 +1255,8 @@ option{
       align-items: center;
       justify-content: center;
     }
-    .switch_closed{
+
+    .switch_closed {
       position: absolute;
       left: 45px;
       top: 1px;
@@ -1111,9 +1265,11 @@ option{
       transition: all .3s ease-out;
       animation: turn_on_animate .4s ease-out;
       background-color: $background_colour;
-      &:hover{
+
+      &:hover {
         background-color: $hover_colour;
       }
+
       @keyframes turn_on_animate {
         0% {
           left: 1px;
@@ -1126,25 +1282,29 @@ option{
   }
 }
 
-.tab_section{
-  &_tab{
+.tab_section {
+  &_tab {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    .active{
+
+    .active {
       background-color: $selected_color;
       color: $selected_text_color;
     }
-    &_title{
+
+    &_title {
       cursor: default;
       padding: 5px;
       background-color: $background_colour;
-      &:hover{
+
+      &:hover {
         background-color: $hover_colour;
         color: $default_text_color;
       }
     }
   }
+
   .fields {
     .section_tab_field {
       height: 100%;
@@ -1164,73 +1324,75 @@ option{
 
 // popup
 
-.animate-bg-popup{
+.animate-bg-popup {
   animation: bg-popup .5s ease-out;
   visibility: visible !important;
 
-  & .animate-show-popup{
+  & .animate-show-popup {
     visibility: visible !important;
-    animation: show-popup 1s ease-out ;
+    animation: show-popup 1s ease-out;
   }
 }
+
 @keyframes bg-popup {
-  0%{
+  0% {
     opacity: 0;
     visibility: hidden;
   }
-  20%{
+  20% {
     opacity: 0;
     visibility: hidden;
   }
-  100%{
+  100% {
     opacity: 1;
     visibility: visible;
   }
 }
 
 @keyframes show-popup {
-  0%{
+  0% {
     visibility: hidden;
     top: -1vh;
   }
-  100%{
+  100% {
 
   }
 }
 
-.animate-bg-popup-close{
+.animate-bg-popup-close {
   animation: bg-popup-close .6s ease-out;
   //visibility: visible !important;
 
-  & .animate-show-popup{
+  & .animate-show-popup {
     //visibility: hidden !important;
-    animation: close-popup .4s ease-out ;
+    animation: close-popup .4s ease-out;
   }
 }
+
 @keyframes bg-popup-close {
-  0%{
+  0% {
     opacity: 1;
     visibility: visible;
   }
-  60%{
+  60% {
     opacity: 1;
     visibility: visible;
   }
-  100%{
+  100% {
     opacity: 0;
     visibility: hidden;
   }
 }
 
 @keyframes close-popup {
-  0%{
+  0% {
     visibility: visible;
     opacity: 1;
   }
   //50%{
   //  top: -1vh;
   //}
-  100%{
+  100% {
     top: -1vh;
     opacity: 0;
     visibility: hidden;
@@ -1248,7 +1410,7 @@ option{
   left: 0;
   z-index: 100;
 
-  .remove:hover{
+  .remove:hover {
     color: $colour_hover_delete_icon_awesome;
   }
 
@@ -1266,7 +1428,7 @@ option{
   }
 }
 
-.select_file{
+.select_file {
   .upload-field {
     display: flex;
 
@@ -1274,39 +1436,43 @@ option{
       width: 300px;
       height: 20px;
       border: 2px solid $background_colour;
+
       .upload-progress {
         height: 100%;
         width: 20%;
         background-color: $header_background_colour;
       }
     }
-    .stop-upload-file{
+
+    .stop-upload-file {
       margin-left: 10px;
-      &:hover{
+
+      &:hover {
         color: $colour_hover_delete_icon_awesome;
       }
     }
   }
 }
 
-.file-manager{
+.file-manager {
   display: grid;
   grid-template-columns: 1fr 250px;
   grid-template-rows: 430px;
   grid-template-areas:
   "all_files file_info";
 
-  .all-files{
+  .all-files {
     grid-area: all_files;
     //background-color: #E8F6EF;
-    .uploaded_files{
+    .uploaded_files {
       overflow-y: scroll;
       height: 100%;
       display: flex;
       flex-wrap: wrap;
       //background-color: #0d7377;
       justify-content: center;
-      .single_item{
+
+      .single_item {
         width: 130px;
         height: 130px;
         margin: 5px;
@@ -1315,24 +1481,29 @@ option{
         align-items: center;
 
         transition: background-color .3s ease-out;
-        &:hover{
+
+        &:hover {
           background-color: $hover_colour;
         }
-        .single-upload-file{
+
+        .single-upload-file {
           width: 100%;
         }
       }
-      .selected-file{
-        background-color: $header_background_colour ;
+
+      .selected-file {
+        background-color: $header_background_colour;
       }
     }
-    .show_more{
+
+    .show_more {
       width: 100%;
       display: flex;
       justify-content: center;
     }
   }
-  .file-info{
+
+  .file-info {
     grid-area: file_info;
     //background-color: #EDF6E5;
   }
